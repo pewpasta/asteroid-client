@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://github.com/RewardedIvan/asteroid-client/raw/main/src/main/resources/assets/asteroid-client/icon.png" alt="asteroid client logo" width="20%"/>
+<img src="https://github.com/RewardedIvan/asteroid-client/raw/main/src/main/resources/assets/asteroid-client/textures/asteroid.png" alt="asteroid client logo" width="20%"/>
 </p>
 
 <h1 align="center">Asteroid Client</h1>
