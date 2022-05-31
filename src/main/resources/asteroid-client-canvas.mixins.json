@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "package": "RewardedIvan.asteroidclient.mixin.canvas",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "RewardedIvan.asteroidclient.MixinPlugin",
+  "client": [
+    "CanvasWorldRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

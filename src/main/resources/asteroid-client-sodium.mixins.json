@@ -1,0 +1,14 @@
+{
+  "required": false,
+  "package": "RewardedIvan.asteroidclient.mixin.sodium",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "RewardedIvan.asteroidclient.MixinPlugin",
+  "client": [
+    "LightDataAccessMixin",
+    "SodiumBlockRendererMixin",
+    "SodiumFluidRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

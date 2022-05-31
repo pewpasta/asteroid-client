@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "name": "Asteroid Client",
+  "id": "asteroid-client",
+  "version": "${version}",
+  "description": "Based utility mod.",
+  "authors": [
+    "MineGame159",
+    "squidoodly",
+    "seasnail",
+    "RewardedIvan"
+  ],
+  "contact": {
+    "homepage": "https://meteorclient.com",
+    "issues": "https://github.com/RewardedIvan/asteroid-client/issues",
+    "sources": "https://github.com/RewardedIvan/asteroid-client",
+    "discord": "not yet"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/asteroid-client/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "RewardedIvan.asteroidclient.AsteroidClient"
+    ]
+  },
+  "mixins": [
+    "asteroid-client.mixins.json",
+    "asteroid-client-indigo.mixins.json",
+    "asteroid-client-sodium.mixins.json",
+    "asteroid-client-canvas.mixins.json"
+  ],
+  "accessWidener": "asteroid-client.accesswidener",
+  "custom": {
+    "asteroid-client:devbuild": "${devbuild}",
+    "asteroid-client:color": "140,140,140",
+    "asteroid-client:commit":  "${commit}",
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://meteorclient.com/discord"
+      }
+    }
+  },
+  "depends": {
+    "java": ">=17",
+    "minecraft": ">=1.18.2",
+    "fabricloader": ">=0.13.2"
+  },
+  "breaks": {
+    "optifabric": "*"
+  }
+}

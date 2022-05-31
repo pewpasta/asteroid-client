@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "package": "RewardedIvan.asteroidclient.mixin.indigo",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "RewardedIvan.asteroidclient.MixinPlugin",
+  "client": [
+    "AbstractQuadRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
