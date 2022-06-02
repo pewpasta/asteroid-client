@@ -1,8 +1,3 @@
-/*
- * This file is part of the Meteor Client distribution (https://github.com/MeteorDevelopment/meteor-client/).
- * Copyright (c) 2022 Meteor Development.
- */
-
 package RewardedIvan.asteroidclient.mixin;
 
 import RewardedIvan.asteroidclient.utils.misc.text.StringCharacterVisitor;
@@ -39,10 +34,8 @@ import java.util.regex.Pattern;
 public abstract class ChatHudMixin implements IChatHud {
     private static final MinecraftClient mc = MinecraftClient.getInstance();
 
-    private static final Pattern METEOR_PREFIX_REGEX = Pattern.compile("^\\s{0,2}(<[0-9]{1,2}:[0-9]{1,2}>\\s)?\\[Meteor\\]");
-    private static final Pattern BARITONE_PREFIX_REGEX = Pattern.compile("^\\s{0,2}(<[0-9]{1,2}:[0-9]{1,2}>\\s)?\\[Baritone\\]");
-    private static final Identifier METEOR_CHAT_ICON = new Identifier("asteroid-client", "textures/icons/chat/asteroid.png");
-    private static final Identifier BARITONE_CHAT_ICON = new Identifier("asteroid-client", "textures/icons/chat/baritone.png");
+    private static final Pattern ASTEROID_PREFIX_REGEX = Pattern.compile("^\\s{0,2}(<[0-9]{1,2}:[0-9]{1,2}>\\s)?\\[Asteroid\\]");
+    private static final Identifier ASTEROID_CHAT_ICON = new Identifier("asteroid-client", "textures/icons/chat/asteroid.png");
 
     @Shadow @Final private List<ChatHudLine<OrderedText>> visibleMessages;
     @Shadow private int scrolledLines;
@@ -124,21 +117,11 @@ public abstract class ChatHudMixin implements IChatHud {
     protected abstract void addMessage(Text message, int messageId);
 
     private void drawIcon(MatrixStack matrices, String line, int y, float opacity) {
-        if (METEOR_PREFIX_REGEX.matcher(line).find()) {
-            RenderSystem.setShaderTexture(0, METEOR_CHAT_ICON);
+        if (ASTEROID_PREFIX_REGEX.matcher(line).find()) {
+            RenderSystem.setShaderTexture(0, ASTEROID_CHAT_ICON);
             matrices.push();
             RenderSystem.setShaderColor(1, 1, 1, opacity);
             matrices.translate(0, y, 0);
-            matrices.scale(0.125f, 0.125f, 1);
-            DrawableHelper.drawTexture(matrices, 0, 0, 0f, 0f, 64, 64, 64, 64);
-            RenderSystem.setShaderColor(1, 1, 1, 1);
-            matrices.pop();
-            return;
-        } else if (BARITONE_PREFIX_REGEX.matcher(line).find()) {
-            RenderSystem.setShaderTexture(0, BARITONE_CHAT_ICON);
-            matrices.push();
-            RenderSystem.setShaderColor(1, 1, 1, opacity);
-            matrices.translate(0, y, 10);
             matrices.scale(0.125f, 0.125f, 1);
             DrawableHelper.drawTexture(matrices, 0, 0, 0f, 0f, 64, 64, 64, 64);
             RenderSystem.setShaderColor(1, 1, 1, 1);
